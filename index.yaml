@@ -3,7 +3,7 @@ entries:
   gitea:
   - apiVersion: v2
     appVersion: 1.13.2
-    created: "2021-02-12T10:26:03.424426+01:00"
+    created: "2021-02-12T10:35:21.53407+01:00"
     dependencies:
     - condition: gitea.cache.builtIn.enabled
       name: memcached
@@ -51,7 +51,7 @@ entries:
     version: 2.1.11
   - apiVersion: v2
     appVersion: 1.13.1
-    created: "2021-02-12T10:26:03.436319+01:00"
+    created: "2021-02-12T10:35:21.54565+01:00"
     dependencies:
     - condition: gitea.cache.builtIn.enabled
       name: memcached
@@ -97,4 +97,4 @@ entries:
     urls:
     - gitea-2.1.9.tgz
     version: 2.1.9
-generated: "2021-02-12T10:26:03.413168+01:00"
+generated: "2021-02-12T10:35:21.522825+01:00"
