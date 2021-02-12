@@ -76,23 +76,23 @@ app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end -}}
 
 {{- define "postgresql.dns" -}}
-{{- printf "%s-postgresql.%s.svc:%g" .Release.Name .Release.Namespace .Values.postgresql.global.postgresql.servicePort -}}
+{{- printf "%s-postgresql.%s" .Release.Name .Release.Namespace .Values.postgresql.global.postgresql.servicePort -}}
 {{- end -}}
 
 {{- define "mysql.dns" -}}
-{{- printf "%s-mysql.%s.svc.%s:%g" .Release.Name .Release.Namespace .Values.clusterDomain .Values.mysql.service.port | trunc 63 | trimSuffix "-" -}}
+{{- printf "%s-mysql.%s" .Release.Name .Release.Namespace .Values.mysql.service.port | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
 {{- define "mariadb.dns" -}}
-{{- printf "%s-mariadb.%s.svc.%s:%g" .Release.Name .Release.Namespace .Values.clusterDomain .Values.mariadb.primary.service.port | trunc 63 | trimSuffix "-" -}}
+{{- printf "%s-mariadb.%s" .Release.Name .Release.Namespace .Values.mariadb.primary.service.port | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
 {{- define "memcached.dns" -}}
-{{- printf "%s-memcached.%s.svc:%g" .Release.Name .Release.Namespace .Values.memcached.service.port | trunc 63 | trimSuffix "-" -}}
+{{- printf "%s-memcached.%s.svc" .Release.Name .Release.Namespace .Values.memcached.service.port | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
 {{- define "gitea.default_domain" -}}
-{{- printf "%s-gitea.%s.svc" (include "gitea.fullname" .) .Release.Namespace | trunc 63 | trimSuffix "-" -}}
+{{- printf "%s-gitea.%s" (include "gitea.fullname" .) .Release.Namespace | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
 {{- define "gitea.ldap_settings" -}}
